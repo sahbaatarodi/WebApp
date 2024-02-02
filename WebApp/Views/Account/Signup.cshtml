@@ -1,0 +1,36 @@
+﻿@model List<Book> // Assuming Book is your model class
+
+@{
+    ViewData["Title"] = "Signup";
+}
+
+<div class="text-center">
+    <h1 class="display-4 text-success" style="font-weight:bold;">Signup</h1>
+
+</div>
+
+<!-- Display Books in Cards -->
+<div class="col  pt-4" style="width:100%; height:80vh; display:flex; justify-content:center; align-items:center;border-radius:8px;">
+    <div class="border" style="width:50%; height:100%; background:#2f2f2f;">
+        <img src="@Url.Content("https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg")" style=" height:100%; width:100%;" alt="Book Image">
+    </div>
+
+
+    <form method="post" action="" class=" border" style="width:50%; height:100%; display:flex;  flex-direction:column; justify-content:center; align-items:center;background:#ededed;">
+        <div class="m-6" style="width:90%;">
+            <label class="form-label">User Name</label>
+            <input type="text" class="form-control" style="width:100%;background:#ededed;" id="exampleFormControlInput1" placeholder="username">
+        </div>
+        <div class="m-2" style="width:90%;">
+            <label class="form-label">Password</label>
+            <input type="password" class="form-control" style="width:100%;background:#ededed;" id="exampleFormControlInput1" placeholder="password">
+        </div>
+        <div class="m-2" style="width:90%;">
+            <label class="form-label">Confirm Password</label>
+            <input type="password" class="form-control" style="width:100%;background:#ededed;" id="exampleFormControlInput1" placeholder="confirm password">
+        </div>
+
+        <a asp-area="" asp-controller="Account" asp-action="Account" class="btn btn-success px-4 m-4"> Signup</a>
+        <div>Have an account? <a asp-area="" asp-controller="Account" asp-action="Login">Login</a></div>
+    </form>
+</div>

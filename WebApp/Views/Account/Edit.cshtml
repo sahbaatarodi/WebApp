@@ -1,0 +1,42 @@
+﻿@model WebApp.Models.Book
+
+@{
+    ViewData["Title"] = "Edit Book";
+}
+
+<h1 class="display-4 text-success" style="font-weight:bold;">Edit Book</h1>
+
+<form asp-action="Edit" method="post" style="background-color: #ddd">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="BookId" />
+
+    <div class="m-2" style="width:90%;">
+        <label class="form-label">Title</label>
+        <input asp-for="Title" class="form-control" style="width:100%;background:#ededed;" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <div class="m-2" style="width:90%;">
+        <label class="form-label">Summary</label>
+        <input asp-for="Author" class="form-control" style="width:100%;background:#ededed;" />
+        <span asp-validation-for="Author" class="text-danger"></span>
+    </div>
+
+    <div class="m-2" style="width:90%;">
+        <label class="form-label">Year</label>
+        <input asp-for="PublicationYear" class="form-control" style="width:100%;background:#ededed;" />
+        <span asp-validation-for="PublicationYear" class="text-danger"></span>
+    </div>
+
+    <div class="m-2" style="width:90%;">
+        <label class="form-label">Image</label>
+        <input asp-for="Image" class="form-control" style="width:100%;background:#ededed;" />
+        <span asp-validation-for="Image" class="text-danger"></span>
+    </div>
+
+    <button class="btn btn-success px-4 m-4"> Save</button>
+</form>
+
+<div>
+    <a class="text-success" asp-action="Account">Back to Account</a>
+</div>

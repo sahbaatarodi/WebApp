@@ -1,0 +1,40 @@
+﻿@model List<Book> // Assuming Book is your model class
+
+@{
+    ViewData["Title"] = "Account Page";
+}
+<div class="text-center">
+    <h1 class="display-4 text-success" style="font-weight:bold;">Dashboard</h1>
+    <div style="width:100%;display:flex; justify-content:end;">
+        <a class="btn btn-secondary" asp-action="Create">Create a Record</a>
+    </div>
+</div>
+<!-- Display All Books in a Table -->
+<table class="table table-striped table-hover" style="background-color: #ddd">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Summary</th>
+            <th>Year</th>
+            <th>Image</th>
+            <!-- Add more columns as needed -->
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td>@book.Title</td>
+                <td>@book.Author</td>
+                <td>@book.PublicationYear</td>
+                <td><img src="@book.Image" style="width:40px;height:auto" /></td>
+                <!-- Add more columns as needed -->
+                <td>
+                    <a class="btn btn-success" asp-action="Edit" asp-route-id="@book.BookId">Edit</a> |
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@book.BookId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

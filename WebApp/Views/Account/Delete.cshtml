@@ -1,0 +1,29 @@
+﻿@model WebApp.Models.Book
+
+@{
+    ViewData["Title"] = "Delete Book";
+}
+
+<div class="container mt-5" style="display:flex; justify-content:center; align-items:center;">
+    <div class="card" style="border-radius: 12px;width: 40%; background-color: #ccc; position: relative;">
+        <img src="@Model.Image" class="card-img-top" style="height: 40vh; width: auto;" alt="Book Image">
+        <div class="card-body">
+            <h5 class="card-title text-success">@Model.Title</h5>
+            <p class="card-text">@Model.Author</p>
+            <p class="card-text px-4 mt-3 bg-success text-light" style="border-radius: 4px; font-weight: 600; position: absolute; top: 0;">@Model.PublicationYear</p>
+
+            <div>
+                <h3>Are you sure you want to delete this book?</h3>
+
+                <form asp-action="Delete" method="post">
+                    <input type="hidden" asp-for="BookId" />
+
+                    <div class="text-center mt-3">
+                        <input type="submit" value="Delete" class="btn btn-danger" />
+                        <a asp-action="Account" class="btn btn-secondary">Back to Account</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+﻿@model List<Book> // Assuming Book is your model class
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4 text-success" style="font-weight:bold;">Book Records</h1>
+    <p style="font-size:20px;font-weight:bold;color:#1f1f1f">The following is a list of the Books we offer</p>
+</div>
+
+<!-- Display Books in Cards -->
+<div class="row">
+    @foreach (var book in Model)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card" style="border-radius:12px; background-color:#ccc;position:relative;">
+                <img src="@book.Image" class="card-img-top" style=" height:40vh; width:auto;" alt="Book Image">
+                <div class="card-body">
+                    <h5 class="card-title text-success">@book.Title</h5>
+                    <p class="card-text">@book.Author</p>
+                    <p class="card-text px-4 mt-3 bg-success text-light" style="border-radius:4px;font-weight:600; position:absolute;top:0;">@book.PublicationYear</p>
+                    <div style="width:100%; display:flex; justify-content:center;">
+                        <a class="btn btn-success px-4 card-title" href="https://amazon.com/s?k=@book.Title">Read More</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    }
+</div>

@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WebApp</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/WebApp.styles.css" asp-append-version="true" />
+</head>
+<body style="background-image:url(https://i.postimg.cc/GpqTGFy9/pexels-jess-bailey-designs-762686.jpg); background-color:#ddd; background-size: cover;  background-position: center;  background-attachment: fixed;background-color: rgba(255, 255, 255, 0.5);">
+    <header style="background-color:#ccc; ">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3">
+            <div class="container-fluid d-sm-inline-flex justify-content-around">
+                <h3 class="navbar-brand text-success" style="font-weight:700;"><img src="@Url.Content("https://i.postimg.cc/25q2KS7k/icons8-book-64.png")" style="border-top-radius:12px; height:80px; width:80px;" alt="Book Image"> </h3>
+                <button class="navbar-toggler"  type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-center  px-4" >
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link " asp-area="" asp-controller="Home" asp-action="Index" style="color:#1f1f1f;font-weight:600;">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Contact" style="color:#1f1f1f;font-weight:600;">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                 <div>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-light btn-success px-4" style="border-radius:3px;" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container" >
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted;" style=" background-color:#ddd;">
+        <div class="container">
+            &copy; 2024 - WebApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
